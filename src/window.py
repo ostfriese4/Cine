@@ -1017,13 +1017,14 @@ class CineWindow(Adw.ApplicationWindow):
 
         @self.mpv.event_callback("end-file")
         def on_end_file(event):
+            GLib.idle_add(self.spinner.set_visible, False)
             info = event.as_dict()
             reason = info["reason"]
             if reason == b"error":
-                self.spinner.set_visible(False)
                 error = info["file_error"]
-                toast = Adw.Toast.new(_("File Error") + f": {error}")
+                toast = Adw.Toast.new(_("File Error") + f": {error.decode('utf-8')}")
                 self.toast_overlay.add_toast(toast)
+                self.mpv.stop()
 
         @self.mpv.property_observer("path")
         def on_path_change(_name, has_file):
@@ -1137,6 +1138,7 @@ class CineWindow(Adw.ApplicationWindow):
 
                 self.start_page.set_visible(is_idle)
                 self.controls_box.set_visible(not is_idle)
+                self.gl_area.set_visible(not is_idle)
 
                 if is_idle:
                     self.revealer_ui.set_reveal_child(True)
