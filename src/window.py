@@ -423,12 +423,6 @@ class CineWindow(Adw.ApplicationWindow):
         self.audio_tracks_menu.remove_all()
         self.audio_tracks_menu.append(_("Add Audio Track"), "win.add-audio-tracks")
 
-        item_none_audio = Gio.MenuItem.new(_("None"), None)
-        item_none_audio.set_action_and_target_value(
-            "win.select-audio", GLib.Variant("i", 0)
-        )
-        self.audio_tracks_menu.append_item(item_none_audio)
-
         for track in tracks:
             if track["type"] in ("sub", "audio"):
                 self._add_track_to_menu(track)

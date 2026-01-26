@@ -109,7 +109,7 @@ scale > trough > slider {
 menubutton.circular popover scrolledwindow box > modelbutton:first-child {
   font-weight: bold;
 }
-menubutton.circular
+/* menubutton.circular
   popover
   scrolledwindow
   box
@@ -124,7 +124,7 @@ menubutton.circular
   > modelbutton:first-child
   label:dir(rtl) {
   margin-right: -23px;
-}
+} */
 
 .time-elapsed {
   margin: 0 -7px;
