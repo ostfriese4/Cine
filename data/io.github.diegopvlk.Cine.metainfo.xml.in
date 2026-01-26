@@ -71,6 +71,18 @@
   </requires>
 
   <releases>
+    <release version="1.0.1" date="2026-01-26">
+      <description translate="no">
+        <ul>
+          <li>Fixes and performance improvements</li>
+          <li>Added support for opening video as audio track</li>
+          <li>Added button to reset all video options</li>
+          <li>Added support for selecting different video tracks</li>
+          <li>Improved mouse and touchpad scrolling</li>
+          <li>Added Russian translation</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-01-20">
       <description translate="no">
         <ul>
