@@ -1,4 +1,4 @@
-# window.py
+# options.py
 #
 # Copyright 2025 Diego Povliuk
 #
