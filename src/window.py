@@ -87,6 +87,8 @@ class CineWindow(Adw.ApplicationWindow):
     subtitles_menu: Gio.Menu = Gtk.Template.Child()
     audio_tracks_menu_button: Gtk.MenuButton = Gtk.Template.Child()
     audio_tracks_menu: Gio.Menu = Gtk.Template.Child()
+    video_tracks_menu_button: Gtk.MenuButton = Gtk.Template.Child()
+    video_tracks_menu: Gio.Menu = Gtk.Template.Child()
     options_menu_button: Gtk.MenuButton = Gtk.Template.Child()
     playlist_shuffle_toggle_button: Gtk.ToggleButton = Gtk.Template.Child()
     playlist_loop_toggle_button: Gtk.ToggleButton = Gtk.Template.Child()
@@ -178,6 +180,7 @@ class CineWindow(Adw.ApplicationWindow):
         self._create_action("clear-and-add", self._on_clear_and_add)
         self._create_action_stateful("select-subtitle", self._on_subtitle_selected, "i")
         self._create_action_stateful("select-audio", self._on_audio_selected, "i")
+        self._create_action_stateful("select-video", self._on_video_selected, "i")
         self._create_action("add-sub-tracks", self._on_add_sub_dialog)
         self._create_action("add-audio-tracks", self._on_add_audio_dialog)
         self._create_action("add-playlist-files", self._on_add_playlist_dialog)
@@ -387,6 +390,7 @@ class CineWindow(Adw.ApplicationWindow):
                     or self.volume_menu_button.props.active
                     or self.subtitles_menu_button.props.active
                     or self.audio_tracks_menu_button.props.active
+                    or self.video_tracks_menu_button.props.active
                 )
                 if not active_or_hover:
                     self.revealer_ui.set_reveal_child(False)
@@ -423,12 +427,20 @@ class CineWindow(Adw.ApplicationWindow):
         self.audio_tracks_menu.remove_all()
         self.audio_tracks_menu.append(_("Add Audio Track"), "win.add-audio-tracks")
 
+        self.video_tracks_menu.remove_all()
+
         for track in tracks:
-            if track["type"] in ("sub", "audio"):
+            if track["type"] in ("sub", "audio", "video"):
                 self._add_track_to_menu(track)
+
+        video_count = len(
+            [t for t in tracks if t["type"] == "video" and not t.get("albumart")]
+        )
+        self.video_tracks_menu_button.set_visible(video_count > 1)
 
     def _add_track_to_menu(self, track):
         track_id = int(track.get("id", 0))
+        track_type = track.get("type")
         lang = track.get("lang")
         title = track.get("title")
 
@@ -437,9 +449,15 @@ class CineWindow(Adw.ApplicationWindow):
             " – ".join(label_parts) if label_parts else (_("Track") + f" {track_id}")
         )
 
-        is_sub = track["type"] == "sub"
-        menu = self.subtitles_menu if is_sub else self.audio_tracks_menu
-        action = "win.select-subtitle" if is_sub else "win.select-audio"
+        if track_type == "sub":
+            menu = self.subtitles_menu
+            action = "win.select-subtitle"
+        elif track_type == "audio":
+            menu = self.audio_tracks_menu
+            action = "win.select-audio"
+        else:
+            menu = self.video_tracks_menu
+            action = "win.select-video"
 
         item = Gio.MenuItem.new(label, None)
         item.set_action_and_target_value(action, GLib.Variant("i", track_id))
@@ -695,6 +713,11 @@ class CineWindow(Adw.ApplicationWindow):
     def _on_audio_selected(self, action, parameter):
         track_id = parameter.get_int32()
         self.mpv.aid = track_id
+        action.set_state(parameter)
+
+    def _on_video_selected(self, action, parameter):
+        track_id = parameter.get_int32()
+        self.mpv.vid = track_id
         action.set_state(parameter)
 
     def _update_play_pause_icon(self, is_paused):
@@ -1100,9 +1123,21 @@ class CineWindow(Adw.ApplicationWindow):
 
             GLib.idle_add(set_val)
 
+        @self.mpv.property_observer("vid")
+        def on_vid_change(_name, value):
+            def set_val():
+                val = value if isinstance(value, int) else 0
+                action: Gio.SimpleAction | None = self.lookup_action(
+                    "select-video"
+                )  # pyright: ignore[reportAssignmentType]
+                if action:
+                    action.set_state(GLib.Variant("i", val))
+
+            GLib.idle_add(set_val)
+
         @self.mpv.property_observer("track-list")
-        def on_tracks_change(_name, value):
-            GLib.idle_add(self._update_track_menus, value)
+        def on_tracks_change(_name, track_list):
+            GLib.idle_add(self._update_track_menus, track_list)
 
         @self.mpv.property_observer("playlist-pos")
         def on_pl_pos_change(_name, _value):

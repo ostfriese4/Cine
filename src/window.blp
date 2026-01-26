@@ -269,6 +269,20 @@ template $CineWindow: Adw.ApplicationWindow {
                   };
                 }
 
+                MenuButton video_tracks_menu_button {
+                  styles [
+                    "circular",
+                    "flat",
+                  ]
+
+                  direction: up;
+                  halign: center;
+                  icon-name: "video-x-generic-symbolic";
+                  tooltip-text: _("Video");
+
+                  menu-model: menu video_tracks_menu {};
+                }
+
                 Separator controls_separator {
                   hexpand: true;
                   opacity: 0;
