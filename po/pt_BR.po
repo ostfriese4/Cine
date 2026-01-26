@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Cine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-24 11:41-0300\n"
-"PO-Revision-Date: 2026-01-24 10:32-0300\n"
+"POT-Creation-Date: 2026-01-26 08:45-0300\n"
+"PO-Revision-Date: 2026-01-26 08:45-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
 "Language: pt_BR\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.diegopvlk.Cine.desktop.in:2 src/main.py:210 src/mpris.py:146
-#: src/mpris.py:364 src/window.py:127 src/window.py:217 src/window.py:1149
+#: src/mpris.py:364 src/window.py:129 src/window.py:221 src/window.py:1185
 #: src/window.blp:6
 msgid "Cine"
 msgstr "Cine"
@@ -109,7 +109,7 @@ msgstr "Diminuir Volume"
 msgid "Play/Pause"
 msgstr "Reproduzir/Pausar"
 
-#: src/shortcuts.py:36 src/shortcuts.py:173 src/window.blp:238
+#: src/shortcuts.py:36 src/shortcuts.py:173 src/window.blp:239
 msgid "Subtitles"
 msgstr "Legendas"
 
@@ -133,35 +133,35 @@ msgstr "Retroceder 5s"
 msgid "Seek 5s Forward"
 msgstr "Avançar 5s"
 
-#: src/shortcuts.py:41 src/shortcuts.py:42 src/window.blp:944
+#: src/shortcuts.py:41 src/shortcuts.py:42 src/window.blp:954
 msgid "Fullscreen"
 msgstr "Tela Cheia"
 
 #: src/shortcuts.py:50 src/shortcuts.py:51 src/shortcuts.py:52
-#: src/shortcuts.py:53 src/shortcuts.py:54 src/window.py:1236
-#: src/window.py:1242 src/window.py:1247 src/window.blp:526
+#: src/shortcuts.py:53 src/shortcuts.py:54 src/window.py:1289
+#: src/window.py:1295 src/window.py:1300 src/window.blp:536
 msgid "Zoom"
 msgstr "Zoom"
 
 #: src/shortcuts.py:50 src/shortcuts.py:51 src/shortcuts.py:52
-#: src/window.blp:556
+#: src/window.blp:566
 msgid "Zoom In"
 msgstr "Aumentar Zoom"
 
-#: src/shortcuts.py:53 src/shortcuts.py:54 src/window.blp:549
+#: src/shortcuts.py:53 src/shortcuts.py:54 src/window.blp:559
 msgid "Zoom Out"
 msgstr "Diminuir Zoom"
 
-#: src/shortcuts.py:55 src/shortcuts.py:56 src/window.py:1318
-#: src/window.py:1324 src/window.py:1329 src/window.blp:791
+#: src/shortcuts.py:55 src/shortcuts.py:56 src/window.py:1371
+#: src/window.py:1377 src/window.py:1382 src/window.blp:801
 msgid "Subtitle Delay"
 msgstr "Atraso da Legenda"
 
-#: src/shortcuts.py:55 src/window.blp:814
+#: src/shortcuts.py:55 src/window.blp:824
 msgid "Decrease Subtitle Delay"
 msgstr "Diminuir Atraso da Legenda"
 
-#: src/shortcuts.py:56 src/window.blp:821
+#: src/shortcuts.py:56 src/window.blp:831
 msgid "Increase Subtitle Delay"
 msgstr "Aumentar Atraso da Legenda"
 
@@ -186,15 +186,15 @@ msgid "Mute/Unmute"
 msgstr "Silenciar/Ativar Som"
 
 #: src/shortcuts.py:60 src/shortcuts.py:61 src/shortcuts.py:62
-#: src/window.py:1336 src/window.py:1342 src/window.py:1347 src/window.blp:844
+#: src/window.py:1389 src/window.py:1395 src/window.py:1400 src/window.blp:854
 msgid "Audio Delay"
 msgstr "Atraso do Áudio"
 
-#: src/shortcuts.py:60 src/window.blp:867
+#: src/shortcuts.py:60 src/window.blp:877
 msgid "Decrease Audio Delay"
 msgstr "Diminuir Atraso do Áudio"
 
-#: src/shortcuts.py:61 src/shortcuts.py:62 src/window.blp:874
+#: src/shortcuts.py:61 src/shortcuts.py:62 src/window.blp:884
 msgid "Increase Audio Delay"
 msgstr "Aumentar Atraso do Áudio"
 
@@ -222,72 +222,72 @@ msgstr "Repetir"
 msgid "File Loop"
 msgstr "Repetição de Arquivo"
 
-#: src/shortcuts.py:80 src/shortcuts.py:81 src/window.py:1253
-#: src/window.py:1258 src/window.py:1263 src/window.blp:579
+#: src/shortcuts.py:80 src/shortcuts.py:81 src/window.py:1306
+#: src/window.py:1311 src/window.py:1316 src/window.blp:589
 msgid "Contrast"
 msgstr "Contraste"
 
-#: src/shortcuts.py:80 src/window.blp:602
+#: src/shortcuts.py:80 src/window.blp:612
 msgid "Decrease Contrast"
 msgstr "Diminuir Contraste"
 
-#: src/shortcuts.py:81 src/window.blp:609
+#: src/shortcuts.py:81 src/window.blp:619
 msgid "Increase Contrast"
 msgstr "Aumentar Contraste"
 
-#: src/shortcuts.py:82 src/shortcuts.py:83 src/window.py:1269
-#: src/window.py:1274 src/window.py:1279 src/window.blp:632
+#: src/shortcuts.py:82 src/shortcuts.py:83 src/window.py:1322
+#: src/window.py:1327 src/window.py:1332 src/window.blp:642
 msgid "Brightness"
 msgstr "Brilho"
 
-#: src/shortcuts.py:82 src/window.blp:655
+#: src/shortcuts.py:82 src/window.blp:665
 msgid "Decrease Brightness"
 msgstr "Diminuir Brilho"
 
-#: src/shortcuts.py:83 src/window.blp:662
+#: src/shortcuts.py:83 src/window.blp:672
 msgid "Increase Brightness"
 msgstr "Aumentar Brilho"
 
-#: src/shortcuts.py:84 src/shortcuts.py:85 src/window.py:1285
-#: src/window.py:1290 src/window.py:1295 src/window.blp:685
+#: src/shortcuts.py:84 src/shortcuts.py:85 src/window.py:1338
+#: src/window.py:1343 src/window.py:1348 src/window.blp:695
 msgid "Gamma"
 msgstr "Gama"
 
-#: src/shortcuts.py:84 src/window.blp:708
+#: src/shortcuts.py:84 src/window.blp:718
 msgid "Decrease Gamma"
 msgstr "Diminuir Gama"
 
-#: src/shortcuts.py:85 src/window.blp:715
+#: src/shortcuts.py:85 src/window.blp:725
 msgid "Increase Gamma"
 msgstr "Aumentar Gama"
 
-#: src/shortcuts.py:86 src/shortcuts.py:87 src/window.py:1301
-#: src/window.py:1306 src/window.py:1311 src/window.blp:738
+#: src/shortcuts.py:86 src/shortcuts.py:87 src/window.py:1354
+#: src/window.py:1359 src/window.py:1364 src/window.blp:748
 msgid "Saturation"
 msgstr "Saturação"
 
-#: src/shortcuts.py:86 src/window.blp:761
+#: src/shortcuts.py:86 src/window.blp:771
 msgid "Decrease Saturation"
 msgstr "Diminuir Saturação"
 
-#: src/shortcuts.py:87 src/window.blp:768
+#: src/shortcuts.py:87 src/window.blp:778
 msgid "Increase Saturation"
 msgstr "Aumentar Saturação"
 
 #: src/shortcuts.py:88 src/shortcuts.py:89 src/shortcuts.py:90
-#: src/window.py:1353 src/window.py:1358 src/window.py:1363
+#: src/window.py:1406 src/window.py:1411 src/window.py:1416
 msgid "Speed"
 msgstr "Velocidade"
 
-#: src/shortcuts.py:88 src/window.blp:927
+#: src/shortcuts.py:88 src/window.blp:937
 msgid "Decrease Playback Speed"
 msgstr "Diminuir Velocidade de Reprodução"
 
-#: src/shortcuts.py:89 src/window.blp:920
+#: src/shortcuts.py:89 src/window.blp:930
 msgid "Increase Playback Speed"
 msgstr "Aumentar Velocidade de Reprodução"
 
-#: src/shortcuts.py:90 src/window.blp:887
+#: src/shortcuts.py:90 src/window.blp:897
 msgid "Reset Playback Speed"
 msgstr "Redefinir Velocidade"
 
@@ -315,84 +315,84 @@ msgstr "Diversos"
 msgid "Unknown title"
 msgstr "Título desconhecido"
 
-#: src/window.py:415 src/window.py:803 src/window.blp:96
+#: src/window.py:420 src/window.py:844 src/window.blp:96
 msgid "Add Subtitle Track"
 msgstr "Adicionar Faixa de Legenda"
 
-#: src/window.py:417 src/window.py:426
+#: src/window.py:422 src/window.py:431
 msgid "None"
 msgstr "Nenhum"
 
-#: src/window.py:424 src/window.blp:101
+#: src/window.py:429 src/window.blp:101
 msgid "Add Audio Track"
 msgstr "Adicionar Faixa de Áudio"
 
-#: src/window.py:443
+#: src/window.py:468
 msgid "Track"
 msgstr "Faixa"
 
-#: src/window.py:479 src/shortcuts-dialog.blp:21 src/window.blp:86
-#: src/window.blp:1038
+#: src/window.py:510 src/shortcuts-dialog.blp:21 src/window.blp:86
+#: src/window.blp:1048
 msgid "Open Folder"
 msgstr "Abrir Pasta"
 
-#: src/window.py:504 src/shortcuts-dialog.blp:16 src/window.blp:81
+#: src/window.py:535 src/shortcuts-dialog.blp:16 src/window.blp:81
 msgid "Open Files"
 msgstr "Abrir Arquivos"
 
-#: src/window.py:507 src/window.blp:91
+#: src/window.py:538 src/window.blp:91
 msgid "Add Files"
 msgstr "Adicionar Arquivos"
 
-#: src/window.py:510
+#: src/window.py:541
 msgid "Add Subtitle"
 msgstr "Adicionar Legenda"
 
-#: src/window.py:513
+#: src/window.py:544
 msgid "Add Audio"
 msgstr "Adicionar Áudio"
 
-#: src/window.py:526
+#: src/window.py:557
 msgid "Subtitle"
 msgstr "Legenda"
 
-#: src/window.py:531 src/window.blp:262
+#: src/window.py:562 src/window.blp:254
 msgid "Audio"
 msgstr "Áudio"
 
-#: src/window.py:534
+#: src/window.py:566
 msgid "Media"
 msgstr "Mídia"
 
-#: src/window.py:807 src/window.py:821
+#: src/window.py:848 src/window.py:863
 msgid "Add to Playlist"
 msgstr "Adicionar à Lista"
 
-#: src/window.py:809 src/window.py:1029
+#: src/window.py:851 src/window.py:1071
 msgid "File Error"
 msgstr "Erro de Arquivo"
 
-#: src/window.py:1178 src/window.py:1186 src/window.py:1193
+#: src/window.py:1230 src/window.py:1238 src/window.py:1245
 msgid "Original"
 msgstr "Original"
 
-#: src/window.py:1179 src/window.py:1187 src/window.py:1193 src/window.blp:367
+#: src/window.py:1231 src/window.py:1239 src/window.py:1245 src/window.blp:377
 msgid "Aspect Ratio"
 msgstr "Proporção de Tela"
 
-#: src/window.py:1201 src/window.py:1208 src/window.py:1213 src/window.blp:420
+#: src/window.py:1253 src/window.py:1260 src/window.py:1265 src/window.blp:430
 msgid "Rotate"
 msgstr "Rotacionar"
 
-#: src/window.py:1219
+#: src/window.py:1271
 msgid "Flip: Horizontal"
 msgstr "Inverter: Horizontal"
 
-#: src/window.py:1224
+#: src/window.py:1276
 msgid "Flip: Vertical"
 msgstr "Inverter: Vertical"
 
-#: src/window.py:1229
+#: src/window.py:1282
 msgid "Flip: Reset"
 msgstr "Inverter: Redefinir"
 
@@ -502,102 +502,110 @@ msgstr "Anterior"
 msgid "Next"
 msgstr "Próximo"
 
-#: src/window.blp:284
+#: src/window.blp:268
+msgid "Video"
+msgstr "Vídeo"
+
+#: src/window.blp:285
 msgid "Shuffle Playlist"
 msgstr "Embaralhar Lista"
 
-#: src/window.blp:295
+#: src/window.blp:296
 msgid "Loop Playlist"
 msgstr "Repetir Lista"
 
-#: src/window.blp:306
+#: src/window.blp:307
 msgid "Loop File"
 msgstr "Repetir Arquivo"
 
-#: src/window.blp:316
+#: src/window.blp:317
 msgid "Playlist"
 msgstr "Lista de Reprodução"
 
-#: src/window.blp:336
+#: src/window.blp:337
 msgid "Options"
 msgstr "Opções"
 
-#: src/window.blp:357
+#: src/window.blp:355
+msgid "Reset All"
+msgstr "Redefinir Tudo"
+
+#: src/window.blp:367
 msgid "Reset Aspect Ratio"
 msgstr "Redefinir Proporção"
 
-#: src/window.blp:390
+#: src/window.blp:400
 msgid "Previous Aspect Ratio"
 msgstr "Proporção Anterior"
 
-#: src/window.blp:397
+#: src/window.blp:407
 msgid "Next Aspect Ratio"
 msgstr "Próxima Proporção"
 
-#: src/window.blp:410
+#: src/window.blp:420
 msgid "Reset Rotation"
 msgstr "Redefinir Rotação"
 
-#: src/window.blp:443
+#: src/window.blp:453
 msgid "Rotate Left"
 msgstr "Girar para Esquerda"
 
-#: src/window.blp:450
+#: src/window.blp:460
 msgid "Rotate Right"
 msgstr "Girar para Direita"
 
-#: src/window.blp:463
+#: src/window.blp:473
 msgid "Reset Flip"
 msgstr "Redefinir Inversão"
 
-#: src/window.blp:473
+#: src/window.blp:483
 msgid "Flip"
 msgstr "Inverter"
 
-#: src/window.blp:496
+#: src/window.blp:506
 msgid "Flip Horizontally"
 msgstr "Inverter Horizontalmente"
 
-#: src/window.blp:503
+#: src/window.blp:513
 msgid "Flip Vertically"
 msgstr "Inverter Verticalmente"
 
-#: src/window.blp:516
+#: src/window.blp:526
 msgid "Reset Zoom"
 msgstr "Redefinir Zoom"
 
-#: src/window.blp:569
+#: src/window.blp:579
 msgid "Reset Contrast"
 msgstr "Redefinir Contraste"
 
-#: src/window.blp:622
+#: src/window.blp:632
 msgid "Reset Brightness"
 msgstr "Redefinir Brilho"
 
-#: src/window.blp:675
+#: src/window.blp:685
 msgid "Reset Gamma"
 msgstr "Redefinir Gama"
 
-#: src/window.blp:728
+#: src/window.blp:738
 msgid "Reset Saturation"
 msgstr "Redefinir Saturação"
 
-#: src/window.blp:781
+#: src/window.blp:791
 msgid "Reset Subtitle Delay"
 msgstr "Redefinir Atraso da Legenda"
 
-#: src/window.blp:834
+#: src/window.blp:844
 msgid "Reset Audio Delay"
 msgstr "Redefinir Atraso do Áudio"
 
-#: src/window.blp:897
+#: src/window.blp:907
 msgid "Playback Speed"
 msgstr "Velocidade de Reprodução"
 
-#: src/window.blp:1014
+#: src/window.blp:1024
 msgid "Drag and Drop Files Here"
 msgstr "Arraste e Solte Arquivos Aqui"
 
-#: src/window.blp:1027
+#: src/window.blp:1037
 msgid "Open…"
 msgstr "Abrir…"
