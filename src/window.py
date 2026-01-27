@@ -1006,21 +1006,50 @@ class CineWindow(Adw.ApplicationWindow):
 
         return True
 
+    def _get_display_param(self):
+        gdk_c = ctypes.CDLL(None)
+        display = Gdk.Display.get_default()
+        param = {}
+
+        if display:
+            if "wayland" in display.get_name():
+                gdk_c.gdk_wayland_display_get_wl_display.restype = ctypes.c_void_p
+                gdk_c.gdk_wayland_display_get_wl_display.argtypes = [ctypes.c_void_p]
+                ptr = gdk_c.gdk_wayland_display_get_wl_display(hash(display))
+                if ptr:
+                    param["wl_display"] = ptr
+            else:
+                gdk_c.gdk_x11_display_get_x11_display.restype = ctypes.c_void_p
+                gdk_c.gdk_x11_display_get_x11_display.argtypes = [ctypes.c_void_p]
+                ptr = gdk_c.gdk_x11_display_get_x11_display(hash(display))
+                if ptr:
+                    param["x11_display"] = ptr
+
+        return param
+
     def _on_realize_area(self, area):
         area.make_current()
+
         proc_address_fn = mpv.MpvGlGetProcAddressFn(
             lambda _inst, name: egl_get_proc_address(name)
         )
+
+        display_param = self._get_display_param()
+
         self.mpv_ctx = mpv.MpvRenderContext(
             self.mpv,
             "opengl",
-            opengl_init_params={"get_proc_address": proc_address_fn},
+            opengl_init_params={
+                "get_proc_address": proc_address_fn,
+            },
+            **display_param,
         )
 
         self.mpv_ctx.update_cb = lambda: GLib.idle_add(
             self.gl_area.queue_render,
             priority=GLib.PRIORITY_HIGH_IDLE,  # pyright: ignore[reportCallIssue]
         )
+
         self.fbo = ctypes.c_int()
 
     def _on_render_area(self, area, _context):
