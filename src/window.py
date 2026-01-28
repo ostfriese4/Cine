@@ -908,8 +908,8 @@ class CineWindow(Adw.ApplicationWindow):
             self.mpv.fullscreen = False
             return
 
-        if key_name == "Tab":
-            self.revealer_ui.set_reveal_child(True)
+        if key_name == "Tab" or key_name == "ISO_Left_Tab":
+            self._show_ui()
             self._hide_ui_timeout(s=3)
             return
 
