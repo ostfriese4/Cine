@@ -23,6 +23,7 @@ from typing import cast
 from gettext import gettext as _
 
 from .utils import ASPECT_RATIOS
+from .preferences import settings
 
 gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk
@@ -32,15 +33,23 @@ from gi.repository import Gtk
 class OptionsMenuButton(Gtk.MenuButton):
     __gtype_name__ = "OptionsMenuButton"
 
+    flip_box: Gtk.Box = Gtk.Template.Child()
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.connect("realize", self._on_realize)
+        self.connect("notify::active", self._on_active)
         self.aspect_index: int = 0
 
     def _on_realize(self, *arg):
         from .window import CineWindow
 
         self.win = cast(CineWindow, self.get_root())
+
+    def _on_active(self, *arg):
+        hwdec_on = settings.get_boolean("hwdec")
+        hwdec = str(self.win.mpv.hwdec_current)
+        self.flip_box.props.sensitive = not (hwdec_on and "-copy" not in hwdec)
 
     # --- RESET VIDEO OPTIONS ---
     @Gtk.Template.Callback()
